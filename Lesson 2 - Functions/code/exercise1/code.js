@@ -6,7 +6,17 @@
 	}
 
 	addManyValues = function () {
-
+        var sum = 0;
+        for(var i = 0; i<arguments.length;i++){
+            sum += arguments[i];
+        }
+        return function(){
+            var sum2 = sum;
+            for(var i = 0; i<arguments.length;i++){
+                sum2 += arguments[i];
+            }
+            return sum2; 
+        }
 	};
 
 	global.UAM.addManyValues = addManyValues;

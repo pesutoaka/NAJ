@@ -6,7 +6,12 @@
 	}
 
 	mapArray = function (array, callback, ctx) {
-
+        var ret = [];
+//        if(typeof ctx!=='undefined')callback = callback.bind(ctx);
+        array.forEach(function(e,i,a){
+            ret[i] = callback.apply(ctx,[e,i,a]);
+        });
+        return ret;
 	};
 
 	global.UAM.mapArray = mapArray;
