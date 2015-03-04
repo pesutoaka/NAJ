@@ -12,7 +12,7 @@ describe('Guess the value of the variable', function () {
 	it('Question 2', function () {
 		var a = 1, b = "2";
 
-		expect(a + b).toBe(); //!!!!!!!!!!!!!!!!!
+		expect(a + b).toBe("12"); //!!!!!!!!!!!!!!!!!
 	});
 
 	it('Question 3', function () {
@@ -22,31 +22,31 @@ describe('Guess the value of the variable', function () {
 			b = 3;
 		}
         
-		expect(b).toBe(); //!!!!!!!!!!!!!!!!!
+		expect(b).toBe(1); //!!!!!!!!!!!!!!!!!
 	});
 
 	it('Question 4', function () {
-		expect(typeof null).toBe(); //!!!!!!!!!!!!!!!!!
-		expect(typeof 3).toBe(); //!!!!!!!!!!!!!!!!!
+		expect(typeof null).toBe("object"); //!!!!!!!!!!!!!!!!!
+		expect(typeof 3).toBe("number"); //!!!!!!!!!!!!!!!!!
 	});
 
 	it('Question 5', function () {
 		if (true) {
 			var a = 1;
 		}
-
-		expect(a).toBe(); //!!!!!!!!!!!!!!!!!
+                
+		expect(a).toBe(1); //!!!!!!!!!!!!!!!!!
 	});
 
 	it('Question 6', function () {
 		var arr = [1, 2, 3, undefined, undefined];
-		expect(arr.length).toBe(); //!!!!!!!!!!!!!!!!!
+		expect(arr.length).toBe(5); //!!!!!!!!!!!!!!!!!
 	});
 
 	it('Question 7', function () {
 		var arr = [1];
 		arr[99] = 2;
-		expect(arr.length).toBe(); //!!!!!!!!!!!!!!!!!
+		expect(arr.length).toBe(100); //!!!!!!!!!!!!!!!!!
 	});
 
 
