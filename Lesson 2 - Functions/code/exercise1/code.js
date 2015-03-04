@@ -4,6 +4,8 @@
 	if (!global.UAM) {
 		global.UAM = {};
 	}
+    
+    
 
 	addManyValues = function () {
         var sum = 0;
