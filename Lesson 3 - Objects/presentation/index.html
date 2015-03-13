@@ -271,6 +271,42 @@ window.myName; // 'Damian'</code></pre>
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
+            var scroll = {};
+            scroll.roll = function(e){
+                if(e.wheelDelta){
+                    var x = e.wheelDelta;
+                    if(x>0){
+                        Reveal.prev();
+                        if(x>120)
+                            Reveal.prev();
+                    }else{
+                        Reveal.next();
+                        if(x<-120)
+                            Reveal.next();
+                    }
+                }
+                if(e.detail){
+                    var x = e.detail;
+                    if(x>0){
+                        Reveal.prev();
+                        if(x>1)
+                            Reveal.prev();
+                    }else{
+                        Reveal.next();
+                        if(x<-1)
+                            Reveal.next();
+                    }
+                }
+            };
+            var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel";
+            if (document.attachEvent) //if IE (and Opera depending on user setting)
+                document.attachEvent("on"+mousewheelevt, function(e){
+                    scroll.roll(e);
+                })
+            else if (document.addEventListener) //WC3 browsers
+                document.addEventListener(mousewheelevt, function(e){
+                    scroll.roll(e);
+                }, false)
 
 		</script>
 
