@@ -4,7 +4,7 @@
 	function newObject(myObject) {
         //http://stackoverflow.com/questions/6750880/javascript-how-does-new-work-internally
         
-        //     var obj, ret, proto;
+        var obj, ret, proto;
 
         // Check if `myObject.prototype` is an object, not a primitive
         proto = Object(myObject.prototype) === myObject.prototype ? myObject.prototype : Object.prototype;
