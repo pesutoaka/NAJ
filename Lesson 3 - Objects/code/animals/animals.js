@@ -5,6 +5,18 @@
 		global.UAM = {};
 	}
 
+    var Animal = {
+        eat: function(animal){
+            console.log(animal.toString());
+            return true ?"Mniam!":"Blee!"
+        }
+    }
+    
+    Cat = Object.create(Animal);
+    Bird = Object.create(Cat);
+    Worm = Object.create(Bird);
+//    Cat.eat = function(o){console.log(o.__proto__)}
+    
 	global.UAM.Cat = Cat;
 	global.UAM.Bird = Bird;
 	global.UAM.Worm = Worm;
