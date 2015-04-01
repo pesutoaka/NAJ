@@ -65,3 +65,7 @@ span{
     padding: 5px;
     display: block;
 }
+
+#listview * {
+    transition: all .25s;
+}
