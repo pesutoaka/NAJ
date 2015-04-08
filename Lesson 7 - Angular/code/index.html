@@ -18,10 +18,31 @@
         <div class="list" ng-controller="TodoCtrl">
             <input type="text" class="field" ng-model="inputValue"/><button class="submit" ng-click="addNew()">Add</button>
             <ul>
-                <li ng-repeat="element in elements"
-                ng-class="{'inactive': element.status === false}"
-                ng-click="element.status = false">{{element.value}}</li>
+                <li ng-repeat="(key, element) in elements | filter:filterText as filterResults"
+                ng-class="{'inactive': element.status === false}" class="clear"
+                ng-click="elemClick(element,key)">{{element.value}}<span><input type="button" value="delete" ng-click="elemDelete(element)" /></span>
+                </li>
             </ul>
+            <div data-css-override-div1 ng-show="filterResults.length===0 && filterText"><p>there were no search results</p></div>
+            <div data-css-override-div2 ng-show="elements.length===0"><p>there is no tasks, add some tasks</p></div>
+            <div class="right-pane">
+                <div ng-repeat="(name, value) in selected">{{name}} : {{value}}</div>
+            </div>
+            <div class="search-bar clear">
+                <div ng-click="searchVisibility = searchVisibility?false:true">
+                    <p>search</p>
+                    <div class="search-icon" >
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert" ng-class="filterText?'show':''">!</div>
+                <div ng-class="searchVisibility?'stretch':''">
+                    <input type="text" ng-model="filterText" ng-class="searchVisibility?'show':''" />
+                </div>
+            </div>
         </div>
     </body>
 </html>

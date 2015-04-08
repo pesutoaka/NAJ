@@ -44,7 +44,7 @@ body {
 	display: block;
 	font-size: 2em;
 	background: #00A36A;
-	transition: background 1s, color 1s;
+	transition: background .35s, color .35s;
 	cursor: pointer;
 }
 
@@ -59,4 +59,217 @@ body {
 
 .ng-scope {
 	border: 2px solid red !important;
+}
+
+.list [type="button"]{
+    float: right;
+    position: relative;
+    height: 100%;
+    padding: 0 20px;
+    background: #CC0000;
+    border: 1px solid black;
+}
+
+.clear{clear: both;}
+
+.search-bar > div:nth-child(1){
+    cursor: pointer;
+}
+.search-bar > div{
+    position: relative;
+    display: inline-block;
+}
+
+.search-bar{
+    background: #B2E6FF;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.search-bar,
+.search-bar *,
+.alert{
+    transition: all .35s;
+}
+.search-bar div:first{
+    display: inline-block
+}
+
+.search-bar p:nth-child(1){
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+}
+.search-icon{
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    width: 30px;
+    vertical-align: bottom;
+}
+
+.search-icon > div{
+    position: absolute;
+}
+/* handle */
+.search-icon > div:nth-child(1){
+    background-color: #000;
+    position: relative;
+    height: 20px;
+    display: inline-block;
+    right:-15px;
+    transform: skewX(45deg);
+    width:5px;
+    top:4px;
+}
+/* magnifing glass */
+.search-icon > div:nth-last-child(1){
+    background-color: #B2E6FF;
+    border: 3px solid #000;
+    border-radius: 15px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    top:-4px;
+    left:0px;
+}
+
+.search-bar input{
+    padding: 5px;
+    border: 1px solid #F5F5F5;
+    display: inline-block;
+    margin: auto 5px;
+    width: calc(100% - 30px);
+    opacity: 0;
+}
+
+.alert{
+    position: fixed !important;
+    bottom: 50px;
+    color: red;
+    font-size: 40px;
+    font-family: fantasy;
+    left: 25px;
+    animation: animationFrames ease-in-out 2s;
+  animation-iteration-count: infinite;
+  -webkit-animation: animationFrames ease-in-out 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation: animationFrames ease-in-out 2s;
+  -moz-animation-iteration-count: infinite;
+  -o-animation: animationFrames ease-in-out 2s;
+  -o-animation-iteration-count: infinite;
+  -ms-animation: animationFrames ease-in-out 2s;
+  -ms-animation-iteration-count: infinite;
+    text-align: center;
+    width: 15px;
+    opacity: 0;
+}
+
+@keyframes animationFrames{
+  0% {
+    text-shadow: 0px 0px 0px red;
+    font-size: 40px;
+  }
+  50% {
+    text-shadow: 0px 0px 5px; red;
+    font-size: 50px;
+  }
+    100% {
+    text-shadow: 0px 0px 0px red;
+    font-size: 40px;
+  }
+}
+
+@-moz-keyframes animationFrames{
+ 0% {
+    text-shadow: 0px 0px 0px red;
+    font-size: 40px;
+  }
+  50% {
+    text-shadow: 0px 0px 5px; red;
+    font-size: 50px;
+  }
+    100% {
+    text-shadow: 0px 0px 0px red;
+    font-size: 40px;
+  }
+}
+
+@-webkit-keyframes animationFrames {
+  0% {
+    text-shadow: 0px 0px 0px red;
+    font-size: 40px;
+  }
+  50% {
+    text-shadow: 0px 0px 5px; red;
+    font-size: 50px;
+  }
+    100% {
+    text-shadow: 0px 0px 0px red;
+    font-size: 40px;
+  }
+}
+
+@-o-keyframes animationFrames {
+ 0% {
+    text-shadow: 0px 0px 0px red;
+    font-size: 40px;
+  }
+  50% {
+    text-shadow: 0px 0px 5px; red;
+    font-size: 50px;
+  }
+    100% {
+    text-shadow: 0px 0px 0px red;
+    font-size: 40px;
+  }
+}
+
+@-ms-keyframes animationFrames {
+  0% {
+    text-shadow: 0px 0px 0px red;
+    font-size: 40px;
+  }
+  50% {
+    text-shadow: 0px 0px 5px; red;
+    font-size: 50px;
+  }
+    100% {
+    text-shadow: 0px 0px 0px red;
+    font-size: 40px;
+  }
+}
+
+.search-bar > div:nth-last-child(1){
+    width: 0;
+}
+
+.stretch{
+    width: 500px !important;
+}
+
+.show{
+    opacity: 1 !important;
+}
+
+[data-css-override-div1]{
+    background: #B2E6FF !important;
+}
+[data-css-override-div2]{
+    background-color: #c00 !important;
+}
+[data-css-override-div1] p,
+[data-css-override-div2] p{
+padding: 6px;}
+
+.right-pane{
+    float: right;
+    text-align: left;
+    background-color: #B2E6FF;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.right-pane div{
+    padding: 4px;
 }
